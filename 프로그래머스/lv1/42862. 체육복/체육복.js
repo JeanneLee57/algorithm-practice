@@ -22,14 +22,6 @@ newLost.forEach((lostEl) => {
 
 return answer;
 
-     
-    
-    
-    // return n - newLost.filter(a => {
-    //     const b = newReserve.find(r => Math.abs(r-a) === 1)
-    //     if(!b) return true
-    //     newReserve = newReserve.filter(r => r !== b)
-    // }).length
 }
     
     
