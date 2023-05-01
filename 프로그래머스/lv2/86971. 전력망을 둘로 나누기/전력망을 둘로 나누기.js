@@ -1,3 +1,4 @@
+/* 인접 행렬 이용한 방법 */
 function solution(n, wires) {
     const graph = Array.from({length: n + 1}, () => Array(n + 1).fill(0))
     const dfs = (arr, node) => {
@@ -12,11 +13,10 @@ function solution(n, wires) {
     }
     let result = 100
     
-    // 와이어 연결 정보 저장
+    // 와이어 연결 정보 저장(인접 행렬 만들기)
     wires.forEach(wire => {
         graph[wire[0]][wire[1]] = graph[wire[1]][wire[0]] = 1
     })
-    console.log(graph)
     // 와이어를 하나씩 끊고 끊어진 각 노드 2개에 대하여 DFS수행 후의 차이를 계산
     wires.forEach(wire => {
         const copy = graph.map(v => v.slice());
