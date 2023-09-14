@@ -16,7 +16,7 @@ function solution(begin, target, words) {
   const bfs = (start) => {
     let q = [];
     q.push(start);
-    while (q.length) {
+    while (q.length > 0) {
       const current = q.shift();
       for (let i = 1; i < n; i++) {
         const next = i;
