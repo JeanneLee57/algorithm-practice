@@ -5,11 +5,8 @@ function solution(n, times) {
     while(start <= end){
         let mid = parseInt((start + end) / 2)
         let total = 0
-        let max = 0
         for(let i=0; i<times.length; i++){
-            let count = Math.floor(mid / times[i])
-            total += count
-            max = Math.max(max, count * times[i])
+            total += Math.floor(mid / times[i])
         }
         if(total >= n) end = mid - 1
         if(total < n) start = mid + 1
