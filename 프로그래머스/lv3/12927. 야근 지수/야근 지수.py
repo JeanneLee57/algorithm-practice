@@ -1,17 +1,17 @@
 import heapq
-
 def solution(n, works):
-    if sum(works) <= n:
-        return 0
+    heap = [-el for el in works]
+    heapq.heapify(heap)
     
-    answer = 0
-    works = [-w for w in works]
-    heapq.heapify(works)
-    while n > 0:
-        max_val = heapq.heappop(works)
-        heapq.heappush(works, max_val+1)
-        n -= 1
+    for i in range(n):
+        work = heapq.heappop(heap)
+        if work == 0: break
+        work += 1
+        heapq.heappush(heap, work)
 
-    for w in works:
-        answer += w ** 2
+    answer = 0
+    
+    for el in heap:
+        answer += el ** 2
+    
     return answer
